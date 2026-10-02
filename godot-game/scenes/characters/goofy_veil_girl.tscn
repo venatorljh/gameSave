@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cb8kle4cl7ilq"]
+
+[ext_resource type="Script" uid="uid://chrxxpd35dvv0" path="res://scripts/characters/goofy_veil_girl.gd" id="1_script"]
+[ext_resource type="SpriteFrames" uid="uid://c6oa3yhts1oqo" path="res://assets/art/characters/npc/goofy_veil_girl_frames.tres" id="2_frames"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_058p3"]
+
+[node name="GoofyVeilGirl" type="CharacterBody2D" unique_id=1500718368]
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("1_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=799455057]
+position = Vector2(10, -30)
+shape = SubResource("CapsuleShape2D_058p3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1871102672]
+z_index = 1
+texture_filter = 1
+position = Vector2(9.999999, -13.999999)
+scale = Vector2(0.06, 0.06)
+sprite_frames = ExtResource("2_frames")
+animation = &"idle_down"
+offset = Vector2(0, -255)
+
+[node name="MagicOrigin" type="Marker2D" parent="."]
+position = Vector2(10, -30)

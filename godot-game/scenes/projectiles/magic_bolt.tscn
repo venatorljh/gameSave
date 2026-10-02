@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c163t5ajfdcgi"]
+
+[ext_resource type="Texture2D" uid="uid://dtyosiu0rx60v" path="res://assets/art/effects/violet_magic_bolt.png" id="1_texture"]
+[ext_resource type="Script" uid="uid://br448h1ym2acr" path="res://scripts/projectiles/magic_bolt.gd" id="2_script"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_core"]
+radius = 6.708204
+
+[node name="MagicBolt" type="Area2D" unique_id=351689062]
+collision_layer = 0
+collision_mask = 4294967295
+script = ExtResource("2_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=458508078]
+z_index = 2
+texture_filter = 1
+position = Vector2(11, -2)
+scale = Vector2(0.028038332, 0.04043968)
+texture = ExtResource("1_texture")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1396688747]
+position = Vector2(21, 0)
+shape = SubResource("CircleShape2D_core")

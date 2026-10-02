@@ -1,6 +1,75 @@
 [gd_scene format=4 uid="uid://cm2lelp0g8r7x"]
 
 [ext_resource type="TileSet" uid="uid://c5cra2jfl0gp7" path="res://assets/tilesets/calciumtrice-outdoor/calciumtrice_outdoor_tileset.tres" id="1_tiles"]
+[ext_resource type="PackedScene" uid="uid://cb8kle4cl7ilq" path="res://scenes/characters/goofy_veil_girl.tscn" id="2_player"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hyger"]
+a = Vector2(-32, 16)
+b = Vector2(-32, 42)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_x25lh"]
+a = Vector2(-21, -22)
+b = Vector2(-44, 10)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ro70f"]
+a = Vector2(-5.6757813, 38)
+b = Vector2(-33.67578, 49)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_887oq"]
+a = Vector2(1, -5)
+b = Vector2(42, -25)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_nfbbo"]
+b = Vector2(58, -6)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_trunk"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pond"]
+radius = 37.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stream_2"]
+size = Vector2(40.648438, 14.75)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xuali"]
+radius = 15.033297
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_km3gr"]
+radius = 14.3178215
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gcbd0"]
+radius = 15.033297
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crates"]
+size = Vector2(28, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_small_prop"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stream_3"]
+size = Vector2(10.75, 13.15625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upper_cliff_left"]
+size = Vector2(32, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upper_cliff_right"]
+size = Vector2(144, 80)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ouq41"]
+a = Vector2(-47, -175)
+b = Vector2(592, -175)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0qwpf"]
+a = Vector2(-47, -175)
+b = Vector2(-50, 210)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hpsyn"]
+a = Vector2(591, 209)
+b = Vector2(-49, 209)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lsunn"]
+a = Vector2(591, -175)
+b = Vector2(592, 209)
 
 [node name="OutdoorMap" type="Node2D" unique_id=1860137654]
 texture_filter = 1
@@ -39,4 +108,115 @@ tile_map_data = PackedByteArray("AAAQAPj/AgAAAAEAAAD///j/AgABAAAAAAAPAAkAAgAAAAI
 tile_set = ExtResource("1_tiles")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=264821377]
-position = Vector2(480, 270)
+position = Vector2(272, 24)
+
+[node name="GoofyVeilGirl" parent="." unique_id=506307202 instance=ExtResource("2_player")]
+position = Vector2(216, 64)
+
+[node name="MapCollisions" type="Node2D" parent="." unique_id=2008210017]
+
+[node name="Water" type="StaticBody2D" parent="MapCollisions" unique_id=464062092]
+
+[node name="river5" type="CollisionShape2D" parent="MapCollisions/Water" unique_id=378911694]
+position = Vector2(92, -171)
+shape = SubResource("SegmentShape2D_hyger")
+
+[node name="river4" type="CollisionShape2D" parent="MapCollisions/Water" unique_id=2014822325]
+position = Vector2(81, -108)
+shape = SubResource("SegmentShape2D_x25lh")
+
+[node name="river3" type="CollisionShape2D" parent="MapCollisions/Water" unique_id=1602535825]
+position = Vector2(44.67578, -136)
+shape = SubResource("SegmentShape2D_ro70f")
+
+[node name="river2" type="CollisionShape2D" parent="MapCollisions/Water" unique_id=1642539481]
+position = Vector2(59, -149)
+shape = SubResource("SegmentShape2D_887oq")
+
+[node name="river1" type="CollisionShape2D" parent="MapCollisions/Water" unique_id=1231819917]
+position = Vector2(-47, -81)
+shape = SubResource("SegmentShape2D_nfbbo")
+
+[node name="Trees" type="StaticBody2D" parent="MapCollisions" unique_id=1729842782]
+
+[node name="TreeNorthWest" type="CollisionShape2D" parent="MapCollisions/Trees" unique_id=1474363444]
+position = Vector2(-8, -72)
+shape = SubResource("CircleShape2D_trunk")
+
+[node name="TreeNorth" type="CollisionShape2D" parent="MapCollisions/Trees" unique_id=476284191]
+position = Vector2(120, -104)
+shape = SubResource("CircleShape2D_trunk")
+
+[node name="TreeNorthEast" type="CollisionShape2D" parent="MapCollisions/Trees" unique_id=2072920223]
+position = Vector2(264, -72)
+shape = SubResource("CircleShape2D_trunk")
+
+[node name="TreeSouthWest" type="CollisionShape2D" parent="MapCollisions/Trees" unique_id=1678973674]
+position = Vector2(-8, 120)
+shape = SubResource("CircleShape2D_trunk")
+
+[node name="DeadTreeSouth" type="CollisionShape2D" parent="MapCollisions/Trees" unique_id=30414601]
+position = Vector2(248, 200)
+shape = SubResource("CircleShape2D_trunk")
+
+[node name="RocksAndProps" type="StaticBody2D" parent="MapCollisions" unique_id=414060945]
+
+[node name="Rockbig" type="CollisionShape2D" parent="MapCollisions/RocksAndProps" unique_id=959647769]
+position = Vector2(97, 33)
+shape = SubResource("CircleShape2D_pond")
+
+[node name="props1" type="CollisionShape2D" parent="MapCollisions/RocksAndProps" unique_id=1514643742]
+position = Vector2(374.0703, -152)
+shape = SubResource("RectangleShape2D_stream_2")
+
+[node name="RockNorth" type="CollisionShape2D" parent="MapCollisions/RocksAndProps" unique_id=247383906]
+position = Vector2(336, -48)
+shape = SubResource("CircleShape2D_xuali")
+
+[node name="RockEast" type="CollisionShape2D" parent="MapCollisions/RocksAndProps" unique_id=305831790]
+position = Vector2(432, 32)
+shape = SubResource("CircleShape2D_km3gr")
+
+[node name="RockSouth" type="CollisionShape2D" parent="MapCollisions/RocksAndProps" unique_id=168523960]
+position = Vector2(400, 144)
+shape = SubResource("CircleShape2D_gcbd0")
+
+[node name="CratesNorthEast" type="CollisionShape2D" parent="MapCollisions/RocksAndProps" unique_id=1607939946]
+position = Vector2(384, -135)
+shape = SubResource("RectangleShape2D_crates")
+
+[node name="PropNorthEast" type="CollisionShape2D" parent="MapCollisions/RocksAndProps" unique_id=1746345455]
+position = Vector2(344, -88)
+shape = SubResource("RectangleShape2D_small_prop")
+
+[node name="props2" type="CollisionShape2D" parent="MapCollisions/RocksAndProps" unique_id=1044666735]
+position = Vector2(407.625, -119.578125)
+shape = SubResource("RectangleShape2D_stream_3")
+
+[node name="Cliffs" type="StaticBody2D" parent="MapCollisions" unique_id=664989860]
+
+[node name="UpperCliffLeft" type="CollisionShape2D" parent="MapCollisions/Cliffs" unique_id=1832293834]
+position = Vector2(432, -136)
+shape = SubResource("RectangleShape2D_upper_cliff_left")
+
+[node name="UpperCliffRight" type="CollisionShape2D" parent="MapCollisions/Cliffs" unique_id=1783932394]
+position = Vector2(520, -120)
+shape = SubResource("RectangleShape2D_upper_cliff_right")
+
+[node name="LowerCliff" type="CollisionPolygon2D" parent="MapCollisions/Cliffs" unique_id=1571437318]
+position = Vector2(-2, 0)
+polygon = PackedVector2Array(571, 34, 592, 33, 593, 82, 592, 96, 592, 208, 432, 208, 439, 169, 470, 137, 496, 96, 516, 74, 525, 66, 531, 53, 538, 38, 549, 33)
+
+[node name="bound" type="StaticBody2D" parent="MapCollisions" unique_id=77702653]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapCollisions/bound" unique_id=1432236685]
+shape = SubResource("SegmentShape2D_ouq41")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MapCollisions/bound" unique_id=1293730043]
+shape = SubResource("SegmentShape2D_0qwpf")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="MapCollisions/bound" unique_id=1422687984]
+shape = SubResource("SegmentShape2D_hpsyn")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="MapCollisions/bound" unique_id=1032355157]
+shape = SubResource("SegmentShape2D_lsunn")

@@ -1,0 +1,17 @@
+# Godot generated/imported editor data
+**/.godot/
+
+# Local editor and OS files
+**/.DS_Store
+**/Thumbs.db
+**/.vscode/
+**/.idea/
+
+# Local secrets and machine-specific configuration
+**/.env
+**/.env.*
+**/*.local
+
+# Viking Fjord demo assets are excluded because their license prohibits redistribution as an asset pack.
+# The current project does not reference these demo files.
+godot-game/assets/tilesets/viking-fjord-demo/

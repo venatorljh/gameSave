@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="MonsterConfig" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/monsters/monster_config.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://monsters/skeleton_spritesheet_calciumtrice.png" id="2_sheet"]
+
+[resource]
+script = ExtResource("1_script")
+monster_id = &"skeleton"
+display_name = "骷髅怪"
+max_health = 42.0
+contact_damage = 8.0
+patrol_radius = 42.0
+patrol_speed = 27.0
+chase_speed = 68.0
+detection_radius = 96.0
+max_chase_distance = 190.0
+patrol_pause_seconds = 0.7
+attack_kind = 0
+attack_range = 29.0
+attack_cooldown = 1.1
+attack_windup = 0.2
+attack_active_seconds = 0.16
+attack_recovery = 0.28
+hitbox_radius = 12.0
+hitbox_forward_offset = 17.0
+body_radius = 6.0
+body_height = 22.0
+body_offset = Vector2(0, -11)
+sprite_offset = Vector2(0, -16)
+sprite_scale = Vector2(1.45, 1.45)
+death_sprite_scale = Vector2(1.45, 1.45)
+sprite_sheet = ExtResource("2_sheet")
+frame_size = Vector2i(32, 32)
+frames_per_row = 10
+patrol_rows = PackedInt32Array(0, 1)
+chase_rows = PackedInt32Array(2)
+attack_rows = PackedInt32Array(3)
+patrol_fps = 10.0
+chase_fps = 12.0
+attack_fps = 16.0
+death_frame_size = Vector2i(32, 32)
+death_frames_per_row = 10
+death_rows = PackedInt32Array(4)
+death_fps = 12.0

@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="MonsterConfig" format=3 uid="uid://biwfdd8k3fyvf"]
+
+[ext_resource type="Script" uid="uid://c4cyn5hs1tks1" path="res://scripts/monsters/monster_config.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bypst1yxlvaf8" path="res://monsters/eyeball_spritesheet.png" id="2_sheet"]
+[ext_resource type="Texture2D" uid="uid://dahys12amy6x5" path="res://monsters/eyeball_death_spritesheet.png" id="3_death"]
+
+[resource]
+script = ExtResource("1_script")
+monster_id = &"eyeball"
+display_name = "眼球怪"
+max_health = 72.0
+contact_damage = 10.0
+patrol_radius = 28.0
+patrol_speed = 33.0
+chase_speed = 97.0
+detection_radius = 110.0
+max_chase_distance = 316.0
+patrol_pause_seconds = 0.5
+attack_kind = 1
+attack_range = 52.0
+attack_cooldown = 1.35
+attack_windup = 0.22
+attack_active_seconds = 0.28
+attack_recovery = 0.28
+hitbox_radius = 10.0
+hitbox_forward_offset = 0.0
+charge_speed = 230.0
+body_radius = 7.0
+body_height = 14.0
+sprite_offset = Vector2(0, -12)
+sprite_scale = Vector2(1.4, 1.4)
+death_sprite_scale = Vector2(0.06, 0.06)
+art_faces_right = false
+sprite_sheet = ExtResource("2_sheet")
+patrol_rows = PackedInt32Array(0)
+chase_rows = PackedInt32Array(1)
+attack_rows = PackedInt32Array(2)
+chase_fps = 12.0
+attack_fps = 11.0
+death_sheet = ExtResource("3_death")
+death_frame_size = Vector2i(543, 724)
+death_frames_per_row = 4
+death_rows = PackedInt32Array(0)
+death_fps = 10.0

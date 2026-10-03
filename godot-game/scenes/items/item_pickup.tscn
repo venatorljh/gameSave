@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bm1cievr1hbr7"]
+
+[ext_resource type="Script" uid="uid://ba8f3cb3wr0qc" path="res://scripts/items/item_pickup.gd" id="1_script"]
+[ext_resource type="Resource" path="res://resources/items/cast_speed.tres" id="2_default"]
+[ext_resource type="Texture2D" uid="uid://dtuv1hxkmlud4" path="res://items/buff_cast_speed_v1.png" id="3_24vly"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pickup"]
+radius = 12.0
+
+[node name="ItemPickup" type="Area2D" unique_id=1224312246]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_script")
+item_config = ExtResource("2_default")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1159274149]
+texture_filter = 1
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("3_24vly")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1506054314]
+shape = SubResource("CircleShape2D_pickup")

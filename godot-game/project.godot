@@ -26,6 +26,16 @@ window/stretch/aspect="expand"
 window/stretch/scale=2.75
 window/stretch/scale_mode="integer"
 
+[layer_names]
+
+2d_physics/layer_1="world"
+2d_physics/layer_2="player"
+2d_physics/layer_3="enemybody"
+2d_physics/layer_4="enemysensor"
+2d_physics/layer_5="bullet"
+2d_physics/layer_6="pickup(互动)"
+2d_physics/layer_7="explosion"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

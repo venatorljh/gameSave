@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://c8sgwx1xxy55j"]
+
+[ext_resource type="Texture2D" path="res://items/chest_closed_v1.png" id="1_chest"]
+[ext_resource type="Script" uid="uid://b60vxgrkidakm" path="res://scripts/items/treasure_chest.gd" id="2_script"]
+[ext_resource type="Resource" path="res://resources/items/cast_speed.tres" id="3_cast"]
+[ext_resource type="Resource" path="res://resources/items/move_speed.tres" id="4_move"]
+[ext_resource type="Resource" path="res://resources/items/spell_power.tres" id="5_power"]
+[ext_resource type="Resource" path="res://resources/items/health_potion.tres" id="6_heal"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chest"]
+size = Vector2(27, 22.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_interaction"]
+radius = 29.0
+
+[node name="TreasureChest" type="StaticBody2D" unique_id=2065842192]
+collision_mask = 0
+script = ExtResource("2_script")
+loot_pool = Array[Resource("res://scripts/items/item_config.gd")]([ExtResource("3_cast"), ExtResource("4_move"), ExtResource("5_power"), ExtResource("6_heal")])
+
+[node name="ChestSprite" type="Sprite2D" parent="." unique_id=9414123]
+texture_filter = 1
+position = Vector2(0, -15)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("1_chest")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=675815090]
+position = Vector2(0, -10.75)
+shape = SubResource("RectangleShape2D_chest")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=475518033]
+position = Vector2(0, -7)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1011030679]
+shape = SubResource("CircleShape2D_interaction")
+
+[node name="InteractionPrompt" type="Label" parent="." unique_id=976670626]
+visible = false
+offset_left = -50.0
+offset_top = -38.0
+offset_right = 50.0
+offset_bottom = -24.0
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 12
+text = "E"

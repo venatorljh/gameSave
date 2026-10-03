@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemConfig" format=3 uid="uid://s6ntquol8bu5"]
+
+[ext_resource type="Script" uid="uid://c236ajjwvwvg7" path="res://scripts/items/item_config.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://cb18jcghvlvd2" path="res://items/buff_spell_power_v1.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+item_id = &"spell_power"
+display_name = "法术增强"
+description = "本局魔法伤害增加 2 点，最多叠加 5 层。"
+drop_weight = 2.0
+icon_texture = ExtResource("2_icon")
+effect_type = 2
+strength = 2.0
+max_stacks = 5

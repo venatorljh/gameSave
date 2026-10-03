@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemConfig" format=3 uid="uid://caul8ubypsgft"]
+
+[ext_resource type="Script" uid="uid://c236ajjwvwvg7" path="res://scripts/items/item_config.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bmxqnowtdw6e5" path="res://items/buff_move_speed_v1.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+item_id = &"move_speed"
+display_name = "移动加速"
+description = "移动速度提高 20%，持续 12 秒。重复拾取会刷新时间。"
+drop_weight = 3.5
+icon_texture = ExtResource("2_icon")
+effect_type = 1
+strength = 1.25
+duration_mode = 1
+duration = 12.0

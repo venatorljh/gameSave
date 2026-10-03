@@ -2,6 +2,11 @@
 
 [ext_resource type="TileSet" uid="uid://c5cra2jfl0gp7" path="res://assets/tilesets/calciumtrice-outdoor/calciumtrice_outdoor_tileset.tres" id="1_tiles"]
 [ext_resource type="PackedScene" uid="uid://cb8kle4cl7ilq" path="res://scenes/characters/goofy_veil_girl.tscn" id="2_player"]
+[ext_resource type="PackedScene" uid="uid://c8sgwx1xxy55j" path="res://scenes/items/treasure_chest.tscn" id="3_chest"]
+[ext_resource type="PackedScene" path="res://scenes/monsters/monster.tscn" id="4_monster"]
+[ext_resource type="Resource" path="res://resources/monsters/eyeball.tres" id="5_eyeball"]
+[ext_resource type="PackedScene" path="res://scenes/maps/new_map.tscn" id="6_new_map"]
+[ext_resource type="Script" path="res://scripts/maps/scene_transition_area.gd" id="7_transition"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_hyger"]
 a = Vector2(-32, 16)
@@ -71,6 +76,9 @@ b = Vector2(-49, 209)
 a = Vector2(591, -175)
 b = Vector2(592, 209)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_new_map_exit"]
+size = Vector2(32, 64)
+
 [node name="OutdoorMap" type="Node2D" unique_id=1860137654]
 texture_filter = 1
 
@@ -107,15 +115,69 @@ texture_filter = 1
 tile_map_data = PackedByteArray("AAAQAPj/AgAAAAEAAAD///j/AgABAAAAAAAPAAkAAgAAAAIAAAD//wQAAgABAAAAAAAHAPb/AgABAAAAAAAfAPb/AQAAACUAAAAfAPf/AQAAACYAAAAfAPj/AQAAACcAAAAfAPn/AQAAACgAAAAfAPr/AQAAACkAAAAgAPb/AQABACUAAAAgAPf/AQABACYAAAAgAPj/AQABACcAAAAgAPn/AQABACgAAAAgAPr/AQABACkAAAAhAPb/AQACACUAAAAhAPf/AQACACYAAAAhAPj/AQACACcAAAAhAPn/AQACACgAAAAhAPr/AQACACkAAAAiAPb/AQADACUAAAAiAPf/AQADACYAAAAiAPj/AQADACcAAAAiAPn/AQADACgAAAAiAPr/AQADACkAAAAjAPb/AQAEACUAAAAjAPf/AQAEACYAAAAjAPj/AQAEACcAAAAjAPn/AQAEACgAAAAjAPr/AQAEACkAAAAkAPb/AQAFACUAAAAkAPf/AQAFACYAAAAkAPj/AQAFACcAAAAkAPn/AQAFACgAAAAkAPr/AQAFACkAAAAdAPb/AQAFACAAAAAdAPf/AQAFACEAAAAdAPj/AQAFACIAAAAdAPn/AQAFACMAAAAdAPr/AQAFACQAAAAeAPb/AQABACUAAAAeAPf/AQABACYAAAAeAPj/AQABACcAAAAeAPn/AQABACgAAAAeAPr/AQABACkAAAAcAPb/AQAEACAAAAAcAPf/AQAEACEAAAAcAPj/AQAEACIAAAAcAPn/AQAEACMAAAAcAPr/AQAEACQAAAAaAPX/AQAEACAAAAAaAPb/AQAEACEAAAAaAPf/AQAEACIAAAAaAPj/AQAEACMAAAAaAPn/AQAEACQAAAAbAPX/AQAFACAAAAAbAPb/AQAFACEAAAAbAPf/AQAFACIAAAAbAPj/AQAFACMAAAAbAPn/AQAFACQAAAAfAAoAAAADAC8AAAAfAAsAAAADADAAAAAfAAwAAAADADEAAAAgAAoAAAAEAC8AAAAgAAsAAAAEADAAAAAgAAwAAAAEADEAAAAhAAoAAAAFAC8AAAAhAAsAAAAFADAAAAAhAAwAAAAFADEAAAAiAAoAAAAFAC8AAAAiAAsAAAAFADAAAAAiAAwAAAAFADEAAAAjAAoAAAAEAC8AAAAjAAsAAAAEADAAAAAjAAwAAAAEADEAAAAkAAoAAAAFAC8AAAAkAAsAAAAFADAAAAAkAAwAAAAFADEAAAAdAAoAAAABAC8AAAAdAAsAAAABADAAAAAdAAwAAAABADEAAAAeAAoAAAACAC8AAAAeAAsAAAACADAAAAAeAAwAAAACADEAAAAcAAoAAAAAAC8AAAAcAAsAAAAAADAAAAAcAAwAAAAAADEAAAAbAAoAAAAEAC8AAAAbAAsAAAAEADAAAAAbAAwAAAAEADEAAAAbAA0AAAAHACkAAAAhAAUAAAAEACAAAAAfAAgAAAACABwAAAAfAAYAAAACABoAAAAfAAcAAAACABsAAAAfAAkAAAACAB0AAAAgAAYAAAADABoAAAAgAAcAAAADABsAAAAgAAgAAAADABwAAAAgAAkAAAADAB0AAAAhAAYAAAAEABoAAAAhAAcAAAAEABsAAAAhAAgAAAAEABwAAAAhAAkAAAAEAB0AAAAiAAYAAAAFABoAAAAiAAcAAAAFABsAAAAiAAgAAAAFABwAAAAiAAkAAAAFAB0AAAAjAAMAAAAGACAAAAAkAAYAAAAGACAAAAAkAAcAAAAGACAAAAAkAAkAAAAGACAAAAAiAAQAAAAGACAAAAAkAAUAAAAEACEAAAAdAAkAAAAEACEAAAAeAAgAAAAHACAAAAA=")
 tile_set = ExtResource("1_tiles")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=264821377]
-position = Vector2(272, 24)
-
 [node name="GoofyVeilGirl" parent="." unique_id=506307202 instance=ExtResource("2_player")]
 position = Vector2(216, 64)
+
+[node name="TreasureChest" parent="." unique_id=917173661 instance=ExtResource("3_chest")]
+position = Vector2(296, 64)
+
+[node name="EyeballMonster" parent="." unique_id=1848494561 instance=ExtResource("4_monster")]
+position = Vector2(160, 96)
+monster_config = ExtResource("5_eyeball")
+
+[node name="SkeletonMonster" parent="." unique_id=2017085904 instance=ExtResource("4_monster")]
+position = Vector2(352, 88)
+
+[node name="RightSideExit" type="Area2D" parent="."]
+position = Vector2(568, -24)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("7_transition")
+destination_scene = ExtResource("6_new_map")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightSideExit"]
+shape = SubResource("RectangleShape2D_new_map_exit")
+
+[node name="DestinationSign" type="Label" parent="RightSideExit"]
+z_index = 30
+offset_left = -72.0
+offset_top = -31.0
+offset_right = 72.0
+offset_bottom = -13.0
+theme_override_colors/font_color = Color(0.94, 0.82, 0.64, 1)
+theme_override_colors/font_outline_color = Color(0.12, 0.09, 0.14, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 11
+text = "→ 新地图"
+horizontal_alignment = 1
+
+[node name="InteractionPrompt" type="Label" parent="RightSideExit"]
+visible = false
+z_index = 30
+offset_left = -72.0
+offset_top = 7.0
+offset_right = 72.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.98, 0.93, 0.82, 1)
+theme_override_colors/font_outline_color = Color(0.12, 0.09, 0.14, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 11
+text = "E 选择是否前往"
+horizontal_alignment = 1
+
+[node name="ChoiceDialog" type="ConfirmationDialog" parent="RightSideExit"]
+visible = false
+process_mode = 3
+title = "前往新地图"
+min_size = Vector2i(360, 140)
+dialog_text = "要前往新地图吗？"
+ok_button_text = "前往"
+cancel_button_text = "留下"
 
 [node name="MapCollisions" type="Node2D" parent="." unique_id=2008210017]
 
 [node name="Water" type="StaticBody2D" parent="MapCollisions" unique_id=464062092]
+collision_mask = 18
 
 [node name="river5" type="CollisionShape2D" parent="MapCollisions/Water" unique_id=378911694]
 position = Vector2(92, -171)
@@ -138,6 +200,7 @@ position = Vector2(-47, -81)
 shape = SubResource("SegmentShape2D_nfbbo")
 
 [node name="Trees" type="StaticBody2D" parent="MapCollisions" unique_id=1729842782]
+collision_mask = 18
 
 [node name="TreeNorthWest" type="CollisionShape2D" parent="MapCollisions/Trees" unique_id=1474363444]
 position = Vector2(-8, -72)
@@ -160,6 +223,7 @@ position = Vector2(248, 200)
 shape = SubResource("CircleShape2D_trunk")
 
 [node name="RocksAndProps" type="StaticBody2D" parent="MapCollisions" unique_id=414060945]
+collision_mask = 18
 
 [node name="Rockbig" type="CollisionShape2D" parent="MapCollisions/RocksAndProps" unique_id=959647769]
 position = Vector2(97, 33)
@@ -194,6 +258,7 @@ position = Vector2(407.625, -119.578125)
 shape = SubResource("RectangleShape2D_stream_3")
 
 [node name="Cliffs" type="StaticBody2D" parent="MapCollisions" unique_id=664989860]
+collision_mask = 18
 
 [node name="UpperCliffLeft" type="CollisionShape2D" parent="MapCollisions/Cliffs" unique_id=1832293834]
 position = Vector2(432, -136)
@@ -208,6 +273,7 @@ position = Vector2(-2, 0)
 polygon = PackedVector2Array(571, 34, 592, 33, 593, 82, 592, 96, 592, 208, 432, 208, 439, 169, 470, 137, 496, 96, 516, 74, 525, 66, 531, 53, 538, 38, 549, 33)
 
 [node name="bound" type="StaticBody2D" parent="MapCollisions" unique_id=77702653]
+collision_mask = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapCollisions/bound" unique_id=1432236685]
 shape = SubResource("SegmentShape2D_ouq41")

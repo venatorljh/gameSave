@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://k0g62mvcff6i"]
+
+[ext_resource type="Texture2D" uid="uid://b235fsx4psdph" path="res://assets/art/effects/violet_slash_v2.png" id="1_texture"]
+[ext_resource type="Script" uid="uid://crvgp5pdep1ej" path="res://scripts/projectiles/slash_attack.gd" id="2_script"]
+
+[node name="SlashAttack" type="Area2D" unique_id=159107320]
+collision_layer = 16
+collision_mask = 4294967293
+script = ExtResource("2_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2076058046]
+z_index = 2
+texture_filter = 1
+position = Vector2(23.000002, 0.5000005)
+scale = Vector2(0.051565375, 0.05732044)
+texture = ExtResource("1_texture")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2042655940]
+polygon = PackedVector2Array(3, -27, 13, -28, 27, -25, 34, -21, 39, -15, 43, -10, 44, 0, 43, 10, 39, 20, 32, 30, 24, 31, 17, 33, 7, 33, 20, 5)

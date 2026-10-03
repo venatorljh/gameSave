@@ -7,8 +7,8 @@
 radius = 6.708204
 
 [node name="MagicBolt" type="Area2D" unique_id=351689062]
-collision_layer = 0
-collision_mask = 4294967295
+collision_layer = 16
+collision_mask = 4294901765
 script = ExtResource("2_script")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=458508078]

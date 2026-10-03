@@ -4,6 +4,7 @@ class_name MagicBolt
 
 @export var speed := 280.0
 @export var max_distance := 256.0
+@export var damage := 10.0
 
 var direction := Vector2.RIGHT
 var source_body: CollisionObject2D
@@ -61,6 +62,8 @@ func _add_trail_point() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body != source_body:
+		if body.has_method("take_damage"):
+			body.call("take_damage", damage)
 		_vanish()
 
 

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemConfig" format=3 uid="uid://ccm845dmshtvb"]
+
+[ext_resource type="Script" uid="uid://c236ajjwvwvg7" path="res://scripts/items/item_config.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://baxq75u3s2o71" path="res://items/item_health_potion_v1.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+item_id = &"health_potion"
+display_name = "回复药水"
+description = "立即恢复 25 点生命。满血时不会被宝箱抽中。"
+icon_texture = ExtResource("2_icon")
+effect_type = 3
+strength = 25.0
+duration_mode = 0

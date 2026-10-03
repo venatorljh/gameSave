@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemConfig" format=3 uid="uid://cb1ytb1ewml1f"]
+
+[ext_resource type="Script" uid="uid://c236ajjwvwvg7" path="res://scripts/items/item_config.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://dtuv1hxkmlud4" path="res://items/buff_cast_speed_v1.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+item_id = &"cast_speed"
+display_name = "施法加速"
+description = "施法频率提高 25%，持续 12 秒。重复拾取会刷新时间。"
+drop_weight = 2.0
+icon_texture = ExtResource("2_icon")
+strength = 1.25
+duration_mode = 1
+duration = 12.0

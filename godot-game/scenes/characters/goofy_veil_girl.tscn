@@ -2,26 +2,48 @@
 
 [ext_resource type="Script" uid="uid://chrxxpd35dvv0" path="res://scripts/characters/goofy_veil_girl.gd" id="1_script"]
 [ext_resource type="SpriteFrames" uid="uid://c6oa3yhts1oqo" path="res://assets/art/characters/npc/goofy_veil_girl_frames.tres" id="2_frames"]
+[ext_resource type="Script" uid="uid://b3r33locomlet" path="res://scripts/items/item_effect_controller.gd" id="3_effects"]
+[ext_resource type="PackedScene" path="res://scenes/ui/player_vitals_hud.tscn" id="4_hud"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_058p3"]
+radius = 8.0
+height = 26.0
 
 [node name="GoofyVeilGirl" type="CharacterBody2D" unique_id=1500718368]
 collision_layer = 2
+collision_mask = 109
 motion_mode = 1
 script = ExtResource("1_script")
+image_scale = 0.045000000000000005
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=799455057]
-position = Vector2(10, -30)
+position = Vector2(11, -27)
 shape = SubResource("CapsuleShape2D_058p3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1871102672]
 z_index = 1
 texture_filter = 1
-position = Vector2(9.999999, -13.999999)
-scale = Vector2(0.06, 0.06)
+position = Vector2(11, -17)
+scale = Vector2(0.045, 0.045)
 sprite_frames = ExtResource("2_frames")
 animation = &"idle_down"
 offset = Vector2(0, -255)
 
-[node name="MagicOrigin" type="Marker2D" parent="."]
-position = Vector2(10, -30)
+[node name="MagicOrigin" type="Marker2D" parent="." unique_id=1776577128]
+position = Vector2(11, -29)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1385158988]
+position = Vector2(11, -30)
+
+[node name="MagicCooldownTimer" type="Timer" parent="." unique_id=266329677]
+wait_time = 0.5
+one_shot = true
+
+[node name="SlashCooldownTimer" type="Timer" parent="." unique_id=515867610]
+wait_time = 0.55
+one_shot = true
+
+[node name="ItemEffects" type="Node" parent="." unique_id=2022382737]
+script = ExtResource("3_effects")
+
+[node name="PlayerVitalsHUD" parent="." unique_id=1768800313 instance=ExtResource("4_hud")]

@@ -7,7 +7,7 @@
 script = ExtResource("1_script")
 item_id = &"health_potion"
 display_name = "回复药水"
-description = "立即恢复 25 点生命。满血时不会被宝箱抽中。"
+description = "使用后立即恢复 25 点生命。满血时可以收集，无法使用。"
 icon_texture = ExtResource("2_icon")
 effect_type = 3
 strength = 25.0

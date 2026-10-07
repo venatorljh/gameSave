@@ -252,6 +252,9 @@ func _try_attack_overlaps() -> void:
 func _hit_body(body: Node2D) -> void:
 	if _state != State.ATTACK or body == self or not body.has_method("take_damage"):
 		return
+	# Dodging does not consume this attack's hit: an active hitbox may catch recovery.
+	if body.has_method("is_invulnerable") and bool(body.call("is_invulnerable")):
+		return
 	var target_id := body.get_instance_id()
 	if _hit_targets.has(target_id):
 		return

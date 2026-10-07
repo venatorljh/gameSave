@@ -2,17 +2,21 @@
 
 [ext_resource type="Texture2D" uid="uid://dtyosiu0rx60v" path="res://assets/art/effects/violet_magic_bolt.png" id="1_texture"]
 [ext_resource type="Script" uid="uid://br448h1ym2acr" path="res://scripts/projectiles/magic_bolt.gd" id="2_script"]
+[ext_resource type="Script" path="res://scripts/projectiles/attack_visual_sort_origin.gd" id="3_sort"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_core"]
 radius = 6.708204
 
 [node name="MagicBolt" type="Area2D" unique_id=351689062]
+y_sort_enabled = true
 collision_layer = 16
 collision_mask = 4294901765
 script = ExtResource("2_script")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=458508078]
-z_index = 2
+[node name="VisualSortOrigin" type="Node2D" parent="."]
+script = ExtResource("3_sort")
+
+[node name="Sprite2D" type="Sprite2D" parent="VisualSortOrigin" unique_id=458508078]
 texture_filter = 1
 position = Vector2(11, -2)
 scale = Vector2(0.028038332, 0.04043968)

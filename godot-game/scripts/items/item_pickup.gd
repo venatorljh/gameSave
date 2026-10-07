@@ -10,6 +10,7 @@ class_name ItemPickup
 
 var _waiting_bodies: Array[Node2D] = []
 var _retry_delay := 0.0
+var _collected := false
 
 
 func _ready() -> void:
@@ -70,7 +71,12 @@ func _on_body_exited(body: Node2D) -> void:
 
 
 func _try_collect(body: Node2D) -> bool:
+	if _collected or is_queued_for_deletion():
+		return false
 	if not bool(body.call("receive_item", item_config)):
 		return false
+	_collected = true
+	_waiting_bodies.clear()
+	set_physics_process(false)
 	queue_free()
 	return true

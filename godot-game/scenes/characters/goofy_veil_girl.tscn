@@ -4,30 +4,48 @@
 [ext_resource type="SpriteFrames" uid="uid://c6oa3yhts1oqo" path="res://assets/art/characters/npc/goofy_veil_girl_frames.tres" id="2_frames"]
 [ext_resource type="Script" uid="uid://b3r33locomlet" path="res://scripts/items/item_effect_controller.gd" id="3_effects"]
 [ext_resource type="PackedScene" path="res://scenes/ui/player_vitals_hud.tscn" id="4_hud"]
+[ext_resource type="SpriteFrames" uid="uid://bwu2qm8qa48ca" path="res://assets/art/characters/npc/roll/goofy_veil_girl_roll_frames.tres" id="5_roll_frames"]
+[ext_resource type="Script" path="res://scripts/items/item_inventory.gd" id="6_inventory"]
+[ext_resource type="PackedScene" path="res://scenes/ui/player_inventory_ui.tscn" id="7_inventory_ui"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_058p3"]
 radius = 8.0
 height = 26.0
 
 [node name="GoofyVeilGirl" type="CharacterBody2D" unique_id=1500718368]
+y_sort_enabled = true
 collision_layer = 2
 collision_mask = 109
 motion_mode = 1
 script = ExtResource("1_script")
-image_scale = 0.045000000000000005
+move_speed = 74.0
+max_stamina = 359.0
+roll_invulnerability_duration = 0.6
+image_scale = 0.045
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=799455057]
 position = Vector2(11, -27)
 shape = SubResource("CapsuleShape2D_058p3")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1871102672]
-z_index = 1
+[node name="VisualSortOrigin" type="Node2D" parent="." unique_id=100843436]
+position = Vector2(11, -14)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VisualSortOrigin" unique_id=1871102672]
 texture_filter = 1
-position = Vector2(11, -17)
+position = Vector2(0, -3)
 scale = Vector2(0.045, 0.045)
 sprite_frames = ExtResource("2_frames")
 animation = &"idle_down"
 offset = Vector2(0, -255)
+
+[node name="RollSprite2D" type="AnimatedSprite2D" parent="VisualSortOrigin" unique_id=503069831]
+visible = false
+texture_filter = 1
+position = Vector2(0, -3)
+scale = Vector2(0.060750004, 0.060750004)
+sprite_frames = ExtResource("5_roll_frames")
+animation = &"roll_down"
+offset = Vector2(0, -185)
 
 [node name="MagicOrigin" type="Marker2D" parent="." unique_id=1776577128]
 position = Vector2(11, -29)
@@ -47,3 +65,8 @@ one_shot = true
 script = ExtResource("3_effects")
 
 [node name="PlayerVitalsHUD" parent="." unique_id=1768800313 instance=ExtResource("4_hud")]
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("6_inventory")
+
+[node name="PlayerInventoryUI" parent="." instance=ExtResource("7_inventory_ui")]

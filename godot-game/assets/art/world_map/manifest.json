@@ -1,0 +1,1206 @@
+{
+  "asset_pack": "medieval_pixel_world_map_v1",
+  "generator": "built-in image_gen",
+  "purpose": "art assets only; not integrated into game",
+  "terrain": {
+    "file": "backgrounds/world_terrain_v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "small_file": "backgrounds/world_terrain_768x512.png",
+    "small_size": [
+      768,
+      512
+    ],
+    "roads_baked_in": false,
+    "pixel_file": "backgrounds/world_terrain_384x256.png",
+    "pixel_size": [
+      384,
+      256
+    ]
+  },
+  "icon_atlas": {
+    "file": "atlases/region_icons_source_v1.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "columns": 6,
+    "rows": 4,
+    "extraction_x_boundaries": [
+      0,
+      259,
+      512,
+      768,
+      1024,
+      1280,
+      1536
+    ],
+    "extraction_y_boundaries": [
+      0,
+      287,
+      532,
+      767,
+      1024
+    ]
+  },
+  "icon_count": 24,
+  "default_icon_size": [
+    128,
+    128
+  ],
+  "small_icon_size": [
+    64,
+    64
+  ],
+  "contact_preview": "previews/region_icons_contact_sheet.png",
+  "icons": [
+    {
+      "id": "village",
+      "display_name": "村庄",
+      "index": 1,
+      "atlas_cell_bounds": [
+        0,
+        0,
+        259,
+        287
+      ],
+      "source_content_bounds": [
+        17,
+        77,
+        259,
+        280
+      ],
+      "source_file": "icons_source/village.png",
+      "source_size": [
+        242,
+        203
+      ],
+      "file": "icons/village.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/village.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        97
+      ],
+      "normalized_offset": [
+        6,
+        25
+      ],
+      "alpha_range": [
+        0,
+        253
+      ]
+    },
+    {
+      "id": "forest",
+      "display_name": "森林",
+      "index": 2,
+      "atlas_cell_bounds": [
+        259,
+        0,
+        512,
+        287
+      ],
+      "source_content_bounds": [
+        282,
+        69,
+        508,
+        280
+      ],
+      "source_file": "icons_source/forest.png",
+      "source_size": [
+        226,
+        211
+      ],
+      "file": "icons/forest.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/forest.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        108
+      ],
+      "normalized_offset": [
+        6,
+        14
+      ],
+      "alpha_range": [
+        0,
+        253
+      ]
+    },
+    {
+      "id": "cemetery",
+      "display_name": "墓地",
+      "index": 3,
+      "atlas_cell_bounds": [
+        512,
+        0,
+        768,
+        287
+      ],
+      "source_content_bounds": [
+        521,
+        99,
+        758,
+        280
+      ],
+      "source_file": "icons_source/cemetery.png",
+      "source_size": [
+        237,
+        181
+      ],
+      "file": "icons/cemetery.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/cemetery.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        89
+      ],
+      "normalized_offset": [
+        6,
+        33
+      ],
+      "alpha_range": [
+        0,
+        253
+      ]
+    },
+    {
+      "id": "church",
+      "display_name": "教堂",
+      "index": 4,
+      "atlas_cell_bounds": [
+        768,
+        0,
+        1024,
+        287
+      ],
+      "source_content_bounds": [
+        776,
+        40,
+        1018,
+        280
+      ],
+      "source_file": "icons_source/church.png",
+      "source_size": [
+        242,
+        240
+      ],
+      "file": "icons/church.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/church.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        115
+      ],
+      "normalized_offset": [
+        6,
+        7
+      ],
+      "alpha_range": [
+        0,
+        254
+      ]
+    },
+    {
+      "id": "ruined_castle",
+      "display_name": "古堡废墟",
+      "index": 5,
+      "atlas_cell_bounds": [
+        1024,
+        0,
+        1280,
+        287
+      ],
+      "source_content_bounds": [
+        1030,
+        63,
+        1275,
+        285
+      ],
+      "source_file": "icons_source/ruined_castle.png",
+      "source_size": [
+        245,
+        222
+      ],
+      "file": "icons/ruined_castle.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/ruined_castle.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        105
+      ],
+      "normalized_offset": [
+        6,
+        17
+      ],
+      "alpha_range": [
+        0,
+        254
+      ]
+    },
+    {
+      "id": "swamp",
+      "display_name": "沼泽",
+      "index": 6,
+      "atlas_cell_bounds": [
+        1280,
+        0,
+        1536,
+        287
+      ],
+      "source_content_bounds": [
+        1294,
+        96,
+        1518,
+        285
+      ],
+      "source_file": "icons_source/swamp.png",
+      "source_size": [
+        224,
+        189
+      ],
+      "file": "icons/swamp.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/swamp.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        98
+      ],
+      "normalized_offset": [
+        6,
+        24
+      ],
+      "alpha_range": [
+        0,
+        253
+      ]
+    },
+    {
+      "id": "mine",
+      "display_name": "矿洞",
+      "index": 7,
+      "atlas_cell_bounds": [
+        0,
+        287,
+        259,
+        532
+      ],
+      "source_content_bounds": [
+        17,
+        324,
+        259,
+        527
+      ],
+      "source_file": "icons_source/mine.png",
+      "source_size": [
+        242,
+        203
+      ],
+      "file": "icons/mine.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/mine.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        97
+      ],
+      "normalized_offset": [
+        6,
+        25
+      ],
+      "alpha_range": [
+        0,
+        253
+      ]
+    },
+    {
+      "id": "watchtower",
+      "display_name": "哨塔",
+      "index": 8,
+      "atlas_cell_bounds": [
+        259,
+        287,
+        512,
+        532
+      ],
+      "source_content_bounds": [
+        283,
+        288,
+        493,
+        527
+      ],
+      "source_file": "icons_source/watchtower.png",
+      "source_size": [
+        210,
+        239
+      ],
+      "file": "icons/watchtower.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/watchtower.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        102,
+        116
+      ],
+      "normalized_offset": [
+        13,
+        6
+      ],
+      "alpha_range": [
+        0,
+        253
+      ]
+    },
+    {
+      "id": "farm",
+      "display_name": "农庄",
+      "index": 9,
+      "atlas_cell_bounds": [
+        512,
+        287,
+        768,
+        532
+      ],
+      "source_content_bounds": [
+        518,
+        320,
+        761,
+        528
+      ],
+      "source_file": "icons_source/farm.png",
+      "source_size": [
+        243,
+        208
+      ],
+      "file": "icons/farm.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/farm.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        99
+      ],
+      "normalized_offset": [
+        6,
+        23
+      ],
+      "alpha_range": [
+        0,
+        253
+      ]
+    },
+    {
+      "id": "windmill",
+      "display_name": "风车磨坊",
+      "index": 10,
+      "atlas_cell_bounds": [
+        768,
+        287,
+        1024,
+        532
+      ],
+      "source_content_bounds": [
+        780,
+        306,
+        1005,
+        528
+      ],
+      "source_file": "icons_source/windmill.png",
+      "source_size": [
+        225,
+        222
+      ],
+      "file": "icons/windmill.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/windmill.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        114
+      ],
+      "normalized_offset": [
+        6,
+        8
+      ],
+      "alpha_range": [
+        0,
+        253
+      ]
+    },
+    {
+      "id": "harbor",
+      "display_name": "港口",
+      "index": 11,
+      "atlas_cell_bounds": [
+        1024,
+        287,
+        1280,
+        532
+      ],
+      "source_content_bounds": [
+        1030,
+        318,
+        1278,
+        528
+      ],
+      "source_file": "icons_source/harbor.png",
+      "source_size": [
+        248,
+        210
+      ],
+      "file": "icons/harbor.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/harbor.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        98
+      ],
+      "normalized_offset": [
+        6,
+        24
+      ],
+      "alpha_range": [
+        0,
+        253
+      ]
+    },
+    {
+      "id": "mountain_pass",
+      "display_name": "山口",
+      "index": 12,
+      "atlas_cell_bounds": [
+        1280,
+        287,
+        1536,
+        532
+      ],
+      "source_content_bounds": [
+        1290,
+        326,
+        1518,
+        528
+      ],
+      "source_file": "icons_source/mountain_pass.png",
+      "source_size": [
+        228,
+        202
+      ],
+      "file": "icons/mountain_pass.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/mountain_pass.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        103
+      ],
+      "normalized_offset": [
+        6,
+        19
+      ],
+      "alpha_range": [
+        0,
+        253
+      ]
+    },
+    {
+      "id": "stone_bridge",
+      "display_name": "石桥",
+      "index": 13,
+      "atlas_cell_bounds": [
+        0,
+        532,
+        259,
+        767
+      ],
+      "source_content_bounds": [
+        17,
+        577,
+        259,
+        755
+      ],
+      "source_file": "icons_source/stone_bridge.png",
+      "source_size": [
+        242,
+        178
+      ],
+      "file": "icons/stone_bridge.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/stone_bridge.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        85
+      ],
+      "normalized_offset": [
+        6,
+        37
+      ],
+      "alpha_range": [
+        0,
+        254
+      ]
+    },
+    {
+      "id": "traveler_camp",
+      "display_name": "旅行者营地",
+      "index": 14,
+      "atlas_cell_bounds": [
+        259,
+        532,
+        512,
+        767
+      ],
+      "source_content_bounds": [
+        277,
+        550,
+        509,
+        760
+      ],
+      "source_file": "icons_source/traveler_camp.png",
+      "source_size": [
+        232,
+        210
+      ],
+      "file": "icons/traveler_camp.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/traveler_camp.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        105
+      ],
+      "normalized_offset": [
+        6,
+        17
+      ],
+      "alpha_range": [
+        0,
+        253
+      ]
+    },
+    {
+      "id": "merchant_caravan",
+      "display_name": "商队",
+      "index": 15,
+      "atlas_cell_bounds": [
+        512,
+        532,
+        768,
+        767
+      ],
+      "source_content_bounds": [
+        523,
+        580,
+        759,
+        752
+      ],
+      "source_file": "icons_source/merchant_caravan.png",
+      "source_size": [
+        236,
+        172
+      ],
+      "file": "icons/merchant_caravan.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/merchant_caravan.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        85
+      ],
+      "normalized_offset": [
+        6,
+        37
+      ],
+      "alpha_range": [
+        0,
+        253
+      ]
+    },
+    {
+      "id": "quarry",
+      "display_name": "采石场",
+      "index": 16,
+      "atlas_cell_bounds": [
+        768,
+        532,
+        1024,
+        767
+      ],
+      "source_content_bounds": [
+        774,
+        550,
+        1016,
+        763
+      ],
+      "source_file": "icons_source/quarry.png",
+      "source_size": [
+        242,
+        213
+      ],
+      "file": "icons/quarry.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/quarry.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        102
+      ],
+      "normalized_offset": [
+        6,
+        20
+      ],
+      "alpha_range": [
+        0,
+        253
+      ]
+    },
+    {
+      "id": "lumber_camp",
+      "display_name": "伐木营地",
+      "index": 17,
+      "atlas_cell_bounds": [
+        1024,
+        532,
+        1280,
+        767
+      ],
+      "source_content_bounds": [
+        1030,
+        555,
+        1271,
+        755
+      ],
+      "source_file": "icons_source/lumber_camp.png",
+      "source_size": [
+        241,
+        200
+      ],
+      "file": "icons/lumber_camp.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/lumber_camp.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        96
+      ],
+      "normalized_offset": [
+        6,
+        26
+      ],
+      "alpha_range": [
+        0,
+        253
+      ]
+    },
+    {
+      "id": "monastery",
+      "display_name": "修道院",
+      "index": 18,
+      "atlas_cell_bounds": [
+        1280,
+        532,
+        1536,
+        767
+      ],
+      "source_content_bounds": [
+        1287,
+        546,
+        1517,
+        751
+      ],
+      "source_file": "icons_source/monastery.png",
+      "source_size": [
+        230,
+        205
+      ],
+      "file": "icons/monastery.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/monastery.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        103
+      ],
+      "normalized_offset": [
+        6,
+        19
+      ],
+      "alpha_range": [
+        0,
+        253
+      ]
+    },
+    {
+      "id": "stone_circle",
+      "display_name": "古石阵",
+      "index": 19,
+      "atlas_cell_bounds": [
+        0,
+        767,
+        259,
+        1024
+      ],
+      "source_content_bounds": [
+        19,
+        796,
+        259,
+        989
+      ],
+      "source_file": "icons_source/stone_circle.png",
+      "source_size": [
+        240,
+        193
+      ],
+      "file": "icons/stone_circle.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/stone_circle.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        93
+      ],
+      "normalized_offset": [
+        6,
+        29
+      ],
+      "alpha_range": [
+        0,
+        254
+      ]
+    },
+    {
+      "id": "battlefield",
+      "display_name": "古战场",
+      "index": 20,
+      "atlas_cell_bounds": [
+        259,
+        767,
+        512,
+        1024
+      ],
+      "source_content_bounds": [
+        277,
+        787,
+        507,
+        986
+      ],
+      "source_file": "icons_source/battlefield.png",
+      "source_size": [
+        230,
+        199
+      ],
+      "file": "icons/battlefield.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/battlefield.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        100
+      ],
+      "normalized_offset": [
+        6,
+        22
+      ],
+      "alpha_range": [
+        0,
+        253
+      ]
+    },
+    {
+      "id": "lakeside",
+      "display_name": "湖畔",
+      "index": 21,
+      "atlas_cell_bounds": [
+        512,
+        767,
+        768,
+        1024
+      ],
+      "source_content_bounds": [
+        518,
+        774,
+        758,
+        989
+      ],
+      "source_file": "icons_source/lakeside.png",
+      "source_size": [
+        240,
+        215
+      ],
+      "file": "icons/lakeside.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/lakeside.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        104
+      ],
+      "normalized_offset": [
+        6,
+        18
+      ],
+      "alpha_range": [
+        0,
+        253
+      ]
+    },
+    {
+      "id": "orchard",
+      "display_name": "果园",
+      "index": 22,
+      "atlas_cell_bounds": [
+        768,
+        767,
+        1024,
+        1024
+      ],
+      "source_content_bounds": [
+        774,
+        785,
+        1016,
+        985
+      ],
+      "source_file": "icons_source/orchard.png",
+      "source_size": [
+        242,
+        200
+      ],
+      "file": "icons/orchard.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/orchard.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        96
+      ],
+      "normalized_offset": [
+        6,
+        26
+      ],
+      "alpha_range": [
+        0,
+        254
+      ]
+    },
+    {
+      "id": "abandoned_village",
+      "display_name": "废弃村庄",
+      "index": 23,
+      "atlas_cell_bounds": [
+        1024,
+        767,
+        1280,
+        1024
+      ],
+      "source_content_bounds": [
+        1027,
+        794,
+        1277,
+        989
+      ],
+      "source_file": "icons_source/abandoned_village.png",
+      "source_size": [
+        250,
+        195
+      ],
+      "file": "icons/abandoned_village.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/abandoned_village.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        90
+      ],
+      "normalized_offset": [
+        6,
+        32
+      ],
+      "alpha_range": [
+        0,
+        253
+      ]
+    },
+    {
+      "id": "boss_citadel",
+      "display_name": "最终 Boss 要塞",
+      "index": 24,
+      "atlas_cell_bounds": [
+        1280,
+        767,
+        1536,
+        1024
+      ],
+      "source_content_bounds": [
+        1287,
+        767,
+        1519,
+        989
+      ],
+      "source_file": "icons_source/boss_citadel.png",
+      "source_size": [
+        232,
+        222
+      ],
+      "file": "icons/boss_citadel.png",
+      "size": [
+        128,
+        128
+      ],
+      "small_file": "icons_64/boss_citadel.png",
+      "small_size": [
+        64,
+        64
+      ],
+      "texture_filter": "nearest",
+      "normalized_visible_size": [
+        116,
+        111
+      ],
+      "normalized_offset": [
+        6,
+        11
+      ],
+      "alpha_range": [
+        0,
+        253
+      ]
+    }
+  ],
+  "notes": [
+    "Generation atlas spacing is slightly uneven; extraction follows transparent gutters rather than blindly slicing equal-height rows.",
+    "Source PNG alpha is preserved. Resized variants use nearest-neighbor sampling and a common bottom alignment.",
+    "The 64px and 128px variants share the same designs; select one size family consistently.",
+    "Roads, map node state, region scenes and navigation are not implemented."
+  ],
+  "assembled_preview": {
+    "file": "previews/world_map_layout_preview.html",
+    "type": "standalone browser art preview",
+    "regions": [
+      {
+        "id": "village",
+        "x": 345,
+        "y": 822
+      },
+      {
+        "id": "forest",
+        "x": 276,
+        "y": 536
+      },
+      {
+        "id": "cemetery",
+        "x": 635,
+        "y": 791
+      },
+      {
+        "id": "church",
+        "x": 677,
+        "y": 486
+      },
+      {
+        "id": "mine",
+        "x": 268,
+        "y": 171
+      },
+      {
+        "id": "farm",
+        "x": 594,
+        "y": 638
+      },
+      {
+        "id": "traveler_camp",
+        "x": 755,
+        "y": 168
+      },
+      {
+        "id": "monastery",
+        "x": 1051,
+        "y": 478
+      },
+      {
+        "id": "ruined_castle",
+        "x": 1252,
+        "y": 153
+      },
+      {
+        "id": "boss_citadel",
+        "x": 1165,
+        "y": 586
+      }
+    ],
+    "roads": "illustrative only; multiple cycles; no navigation implementation",
+    "images": "uses the delivered background and icon PNG assets",
+    "fragment_file": "previews/world_map_layout_preview.fragment.html"
+  }
+}

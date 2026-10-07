@@ -7,6 +7,8 @@ var _health := 100.0
 var _max_health := 100.0
 var _mana := 100.0
 var _max_mana := 100.0
+var _stamina := 100.0
+var _max_stamina := 100.0
 
 
 func _ready() -> void:
@@ -15,15 +17,19 @@ func _ready() -> void:
 		return
 	var canvas := get_parent()
 	var actor: Node = canvas.get_parent() if canvas != null else null
-	if actor == null or not actor.has_signal("vitals_changed"):
+	if actor == null:
 		return
-	actor.connect("vitals_changed", Callable(self, "_on_vitals_changed"))
-	_on_vitals_changed(
-		float(actor.get("health")),
-		float(actor.get("max_health")),
-		float(actor.get("mana")),
-		float(actor.get("max_mana"))
-	)
+	if actor.has_signal("vitals_changed"):
+		actor.connect("vitals_changed", Callable(self, "_on_vitals_changed"))
+		_on_vitals_changed(
+			float(actor.get("health")),
+			float(actor.get("max_health")),
+			float(actor.get("mana")),
+			float(actor.get("max_mana"))
+		)
+	if actor.has_signal("stamina_changed"):
+		actor.connect("stamina_changed", Callable(self, "_on_stamina_changed"))
+		_on_stamina_changed(float(actor.get("stamina")), float(actor.get("max_stamina")))
 
 
 func _on_vitals_changed(health: float, health_limit: float, mana: float, mana_limit: float) -> void:
@@ -34,10 +40,16 @@ func _on_vitals_changed(health: float, health_limit: float, mana: float, mana_li
 	queue_redraw()
 
 
+func _on_stamina_changed(stamina: float, stamina_limit: float) -> void:
+	_stamina = stamina
+	_max_stamina = maxf(stamina_limit, 1.0)
+	queue_redraw()
+
+
 func _draw() -> void:
 	var width := size.x
 	var height := size.y
-	if width < 60.0 or height < 50.0:
+	if width < 60.0 or height < 76.0:
 		return
 
 	# 木底、紫灰金属边与铆钉沿用室外瓦片和宝箱的低饱和色调。
@@ -55,6 +67,8 @@ func _draw() -> void:
 		Color("#a84d63"), Color("#d67b8a"))
 	_draw_bar(Rect2(35.0, 39.0, width - 46.0, 12.0), _mana, _max_mana,
 		Color("#5478b7"), Color("#91b1df"))
+	_draw_bar(Rect2(35.0, 61.0, width - 46.0, 12.0), _stamina, _max_stamina,
+		Color("#638b55"), Color("#a3bf79"))
 
 	var font := get_theme_default_font()
 	if font == null:
@@ -63,8 +77,10 @@ func _draw() -> void:
 	var shadow_color := Color("#181420")
 	_draw_text(font, Vector2(9.0, 27.0), "HP", 10, text_color, shadow_color)
 	_draw_text(font, Vector2(9.0, 49.0), "MP", 10, text_color, shadow_color)
+	_draw_text(font, Vector2(9.0, 71.0), "SP", 10, text_color, shadow_color)
 	_draw_value(font, Vector2(35.0, 27.0), width - 50.0, _health, _max_health, text_color, shadow_color)
 	_draw_value(font, Vector2(35.0, 49.0), width - 50.0, _mana, _max_mana, text_color, shadow_color)
+	_draw_value(font, Vector2(35.0, 71.0), width - 50.0, _stamina, _max_stamina, text_color, shadow_color)
 
 
 func _draw_bar(rect: Rect2, current: float, maximum: float, fill_color: Color, light_color: Color) -> void:

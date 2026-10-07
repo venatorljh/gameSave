@@ -1,15 +1,19 @@
 # 道具资源配置
 
-道具共用 `scenes/items/item_pickup.tscn`。场景负责图标显示和 Area2D 拾取，`ItemConfig` 资源负责外观、掉落权重和效果。宝箱共用 `scenes/items/treasure_chest.tscn`，从 `loot_pool` 中按权重抽取可使用的资源。
+道具共用 `scenes/items/item_pickup.tscn`。场景负责图标显示和 Area2D 拾取，`ItemConfig` 资源负责外观、掉落权重和效果。宝箱共用 `scenes/items/treasure_chest.tscn`，从 `loot_pool` 中按权重抽取可收纳的资源。拾取后先进入物品栏，按 Tab 打开物品栏，再选中道具并点击使用。
 
 ## 新增道具
 
 1. 复制一份本目录的 `.tres`，设置唯一的 `item_id`、名称、描述和 `icon_texture`。
 2. 设置 `effect_type` 与 `strength`。施法频率、移动速度使用倍率，如 `1.25` 表示提高 25%；法术威力、治疗使用固定数值。
-3. 设置 `duration_mode`：`INSTANT` 立即生效，`TIMED` 持续 `duration` 秒，`UNTIL_RUN_END` 持续到本局结束。治疗使用 `INSTANT`。
-4. 设置 `max_stacks` 和 `drop_weight`。限时效果在达到层数上限后再次拾取会刷新时间；本局效果在达到上限后不会再被随机宝箱抽中。权重为 `0` 时不参与随机掉落，但仍可作为宝箱的 `fixed_loot`。
+3. 设置 `duration_mode`：`INSTANT` 在使用时立即生效，`TIMED` 从使用时起持续 `duration` 秒，`UNTIL_RUN_END` 持续到本局结束。治疗使用 `INSTANT`。
+4. 设置 `max_stacks` 和 `drop_weight`。`max_stacks` 限制已生效增益的层数，不限制物品栏里的数量。限时效果在达到层数上限后再次使用会刷新时间；本局效果达到上限后不能继续使用，但仍能收集。满血时也能收集药水，使用时才检查是否需要治疗。权重为 `0` 时不参与随机掉落，但仍可作为宝箱的 `fixed_loot`。
 5. 把资源加入宝箱实例的 `loot_pool`，或把通用拾取场景放到地图中并指定其 `item_config`。
 
 当前控制器支持施法频率、移动速度、法术威力和治疗四类效果。新增同类道具只需新建资源；新增效果类别需要在 `scripts/items/item_effect_controller.gd` 中添加对应的计算逻辑。
 
 玩家场景中的 `ItemEffects` 节点可设置最高移速倍率和最短施法间隔。资源在运行中作为只读配置使用，剩余时间和叠加层数只保存在该节点内；重新开始一局时自然清空。
+
+人物下的 `Inventory` 节点保存资源与数量。`PlayerInventoryUI` 使用半透明格子显示物品，默认每页 20 格（5 列 × 4 行），超出一页时分页；空格保留显示，主面板大小不随持有量改变，也不设置容量限制。选中物品后才在旁边显示独立小详情卡和使用按钮。
+
+按 Tab 打开物品栏不会暂停游戏，移动、攻击、怪物行为和增益倒计时照常进行。翻滚时可以打开界面，但翻滚及其结束后的等待期间不能使用道具；使用按钮实时检查是否可用。Esc 优先关闭详情卡，再关闭物品栏。其他菜单已经暂停游戏时不能打开；其他菜单在物品栏打开后暂停游戏时，物品栏自动收起且不修改全局暂停状态。详见工作区的 `docs/物品栏系统说明.md`。

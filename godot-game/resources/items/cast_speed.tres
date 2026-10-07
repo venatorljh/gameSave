@@ -7,7 +7,7 @@
 script = ExtResource("1_script")
 item_id = &"cast_speed"
 display_name = "施法加速"
-description = "施法频率提高 25%，持续 12 秒。重复拾取会刷新时间。"
+description = "施法频率提高 25%，持续 12 秒。重复使用会刷新时间。"
 drop_weight = 2.0
 icon_texture = ExtResource("2_icon")
 strength = 1.25

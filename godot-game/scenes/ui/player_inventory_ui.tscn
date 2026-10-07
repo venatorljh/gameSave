@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bh3mlndl8rrqp"]
+
+[ext_resource type="Script" uid="uid://bf7ec17v0mv5t" path="res://scripts/ui/player_inventory_ui.gd" id="1_script"]
+
+[node name="PlayerInventoryUI" type="CanvasLayer" unique_id=866654115]
+process_mode = 3
+layer = 20
+script = ExtResource("1_script")
+
+[node name="Screen" type="Control" parent="." unique_id=568718426]
+visible = false
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="Screen" unique_id=48997935]
+clip_contents = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 292.0
+offset_bottom = 288.0
+
+[node name="ItemDetails" type="Panel" parent="Screen" unique_id=308759993]
+visible = false
+clip_contents = true
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 216.0

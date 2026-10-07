@@ -1,0 +1,57 @@
+<div id="medieval-world-art-v1">
+  <div class="viz-row">
+    <h3>大世界地图 · 素材搭配预览</h3>
+    <label class="form-check">
+      <input class="form-check-input" type="checkbox" checked data-show-regions>
+      <span class="form-check-label">地区与示例道路</span>
+    </label>
+  </div>
+  <div class="world-art-stage" role="img" aria-label="中世纪像素大世界：山脉、森林、河流、湖泊、沼泽与海岸，上方叠加十个地区图标和具有多个环路的示例道路。">
+    <img class="world-art-ground" src="__BACKGROUND_DATA__" alt="">
+    <svg class="world-art-routes" viewBox="0 0 1536 1024" aria-hidden="true">
+      <g fill="none" stroke="var(--foreground)" stroke-width="3" stroke-linejoin="round" opacity="0.88">
+        <path d="M345 822 L318 708 L276 536 M345 822 L480 827 L635 791 M345 822 L474 713 L594 638 M276 536 L229 376 L268 171 M276 536 L488 486 L677 486 M635 791 L639 630 L677 486 M635 791 L594 638 M677 486 L724 315 L755 168 M677 486 L809 480 L928 472 L1051 478 M594 638 L727 616 L860 542 L1051 478 M268 171 L504 146 L755 168 M755 168 L1000 158 L1252 153 M1051 478 L1157 343 L1252 153 M1051 478 L1103 528 L1165 586 M1252 153 L1281 396 L1165 586"></path>
+      </g>
+    </svg>
+    <div class="world-art-regions" aria-hidden="true">
+      __REGION_IMAGES__
+    </div>
+  </div>
+  <div class="text-small text-muted" data-world-art-status aria-live="polite">示例网络 · 出发点、8 个普通地区与 Boss</div>
+</div>
+<style>
+#medieval-world-art-v1 .world-art-stage { position:relative; width:100%; }
+#medieval-world-art-v1 .world-art-ground { display:block; width:100%; height:auto; image-rendering:pixelated; }
+#medieval-world-art-v1 .world-art-routes,#medieval-world-art-v1 .world-art-regions { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+#medieval-world-art-v1 .world-art-regions img { position:absolute; width:8.333333%; height:auto; transform:translate(-50%,-100%); image-rendering:pixelated; }
+#medieval-world-art-v1 .world-art-regions img.world-art-bridge { width:5.208333%; }
+#medieval-world-art-v1 [hidden] { display:none; }
+</style>
+<script>
+(() => {
+  const root = document.getElementById("medieval-world-art-v1");
+  const input = root.querySelector("[data-show-regions]");
+  const routes = root.querySelector(".world-art-routes");
+  const regions = root.querySelector(".world-art-regions");
+  const status = root.querySelector("[data-world-art-status]");
+  function apply(show) {
+    input.checked = show;
+    routes.toggleAttribute("hidden", !show);
+    regions.hidden = !show;
+    status.textContent = show ? "示例网络 · 出发点、8 个普通地区与 Boss" : "地形底图 · 地区位置与连接可重新安排";
+  }
+  const saved = window.openai?.widgetState;
+  apply(typeof saved?.privateContent?.showRegions === "boolean" ? saved.privateContent.showRegions : true);
+  input.addEventListener("change", () => {
+    apply(input.checked);
+    if (window.openai?.setWidgetState) {
+      window.openai.setWidgetState({modelContent:{showRegions:input.checked},privateContent:{showRegions:input.checked}}).catch(() => {});
+    }
+  });
+  window.addEventListener("openai:set_globals", event => {
+    const savedState = event.detail?.globals?.widgetState;
+    if (typeof savedState?.privateContent?.showRegions === "boolean") apply(savedState.privateContent.showRegions);
+  });
+})();
+</script>
+

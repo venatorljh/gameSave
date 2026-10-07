@@ -7,7 +7,7 @@
 script = ExtResource("1_script")
 item_id = &"move_speed"
 display_name = "移动加速"
-description = "移动速度提高 20%，持续 12 秒。重复拾取会刷新时间。"
+description = "移动速度提高 25%，持续 12 秒。重复使用会刷新时间。"
 drop_weight = 3.5
 icon_texture = ExtResource("2_icon")
 effect_type = 1

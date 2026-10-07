@@ -1,0 +1,198 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bwu2qm8qa48ca"]
+
+[ext_resource type="Texture2D" uid="uid://cmvfa7ogxikqk" path="res://assets/art/characters/npc/roll/goofy_veil_girl_roll_down_v1.png" id="1_down"]
+[ext_resource type="Texture2D" uid="uid://d0ccua84uxhbo" path="res://assets/art/characters/npc/roll/goofy_veil_girl_roll_left_v1.png" id="2_left"]
+[ext_resource type="Texture2D" uid="uid://m7h3kuo4irfm" path="res://assets/art/characters/npc/roll/goofy_veil_girl_roll_right_v1.png" id="3_right"]
+[ext_resource type="Texture2D" uid="uid://dw62q6f4aoevj" path="res://assets/art/characters/npc/roll/goofy_veil_girl_roll_up_v1.png" id="4_up"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_down_0"]
+atlas = ExtResource("1_down")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_down_1"]
+atlas = ExtResource("1_down")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_down_2"]
+atlas = ExtResource("1_down")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_down_3"]
+atlas = ExtResource("1_down")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_down_4"]
+atlas = ExtResource("1_down")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_down_5"]
+atlas = ExtResource("1_down")
+region = Rect2(1024, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_left_0"]
+atlas = ExtResource("2_left")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_left_1"]
+atlas = ExtResource("2_left")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_left_2"]
+atlas = ExtResource("2_left")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_left_3"]
+atlas = ExtResource("2_left")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_left_4"]
+atlas = ExtResource("2_left")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_left_5"]
+atlas = ExtResource("2_left")
+region = Rect2(1024, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_right_0"]
+atlas = ExtResource("3_right")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_right_1"]
+atlas = ExtResource("3_right")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_right_2"]
+atlas = ExtResource("3_right")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_right_3"]
+atlas = ExtResource("3_right")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_right_4"]
+atlas = ExtResource("3_right")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_right_5"]
+atlas = ExtResource("3_right")
+region = Rect2(1024, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_up_0"]
+atlas = ExtResource("4_up")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_up_1"]
+atlas = ExtResource("4_up")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_up_2"]
+atlas = ExtResource("4_up")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_up_3"]
+atlas = ExtResource("4_up")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_up_4"]
+atlas = ExtResource("4_up")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roll_up_5"]
+atlas = ExtResource("4_up")
+region = Rect2(1024, 512, 512, 512)
+
+[resource]
+resource_name = "Goofy Veil Girl Roll"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_down_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_down_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_down_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_down_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_down_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_down_5")
+}],
+"loop": 0,
+"name": &"roll_down",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_left_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_left_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_left_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_left_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_left_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_left_5")
+}],
+"loop": 0,
+"name": &"roll_left",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_right_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_right_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_right_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_right_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_right_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_right_5")
+}],
+"loop": 0,
+"name": &"roll_right",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_up_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_up_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_up_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_up_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_up_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roll_up_5")
+}],
+"loop": 0,
+"name": &"roll_up",
+"speed": 12.0
+}]

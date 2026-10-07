@@ -5,11 +5,13 @@ class_name SlashAttack
 @export_range(0.05, 1.0, 0.01) var active_seconds := 0.12
 @export_range(1.0, 100.0, 1.0) var damage := 14.0
 
-@onready var slash_sprite: Sprite2D = $Sprite2D
+@onready var visual_sort_origin: AttackVisualSortOrigin = $VisualSortOrigin
+@onready var slash_sprite: Sprite2D = $VisualSortOrigin/Sprite2D
 
 var source_body: CollisionObject2D
 var _remaining := 0.0
 var _hit_targets: Dictionary = {}
+var _sort_point := Vector2.ZERO
 
 
 func _ready() -> void:
@@ -24,6 +26,8 @@ func launch(origin: Vector2, aim: Vector2, caster: CollisionObject2D, attack_dam
 	damage = attack_damage
 	global_position = origin
 	rotation = aim.angle() if aim != Vector2.ZERO else 0.0
+	_sort_point = AttackVisualSortOrigin.actor_sort_point(caster)
+	_sync_visual_depth()
 	_remaining = active_seconds
 	slash_sprite.modulate.a = 1.0
 	slash_sprite.rotation = -0.12
@@ -34,10 +38,17 @@ func launch(origin: Vector2, aim: Vector2, caster: CollisionObject2D, attack_dam
 
 
 func _physics_process(delta: float) -> void:
+	_sync_visual_depth()
 	_remaining -= delta
 	if _remaining <= 0.0:
 		monitoring = false
 		queue_free()
+
+
+func _sync_visual_depth() -> void:
+	if is_instance_valid(source_body):
+		_sort_point = AttackVisualSortOrigin.actor_sort_point(source_body)
+	visual_sort_origin.set_world_sort_point(_sort_point)
 
 
 func _on_body_entered(body: Node2D) -> void:

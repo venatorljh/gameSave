@@ -1,0 +1,119 @@
+{
+  "generator": "built-in image_gen",
+  "purpose": "world-map art only, no gameplay implementation",
+  "reference_images": [
+    "C:\\Users\\ljh\\Desktop\\game\\art-previews\\new_map_depth_preview.png",
+    "C:\\Users\\ljh\\Desktop\\game\\godot-game\\assets\\tilesets\\calciumtrice-outdoor\\trees_23.png",
+    "C:\\Users\\ljh\\Desktop\\game\\godot-game\\assets\\tilesets\\calciumtrice-medieval\\medieval_tileset_exterior.png"
+  ],
+  "prompts": {
+    "mapPrompt": "Use case: stylized-concept. Asset type: actual raster art asset for a medieval 2D pixel roguelite in Godot. The supplied images are STYLE REFERENCES ONLY, do not reproduce their tilesheet arrangement. Match the existing Calciumtrice outdoor/town look shown in reference images: muted dusty olive and sage grass, gray-teal foliage, smoky gray-lavender masonry, cream-gray plaster, dark brown timber, muted ochre and faded brick-red roofs, desaturated slate-blue water. Simple hand-placed square pixel clusters, restrained 3-4 tone ramps per material, crisp hard edges, sparse dithering. Orthographic top-down RPG view with front-facing vertical building walls, about 45-degree downward view, NOT diamond-isometric. Slightly somber medieval countryside, approachable and readable. No glossy rendering, no modern objects, no smooth illustration, no gradients, no antialiasing, no text, no logos or watermark.\nPrimary request: Draw ONE complete world-map terrain BACKGROUND, landscape canvas exactly 1536 by 1024 pixels, visually native 384 by 256 pixel art enlarged with nearest-neighbor 4x square pixel blocks. Not a parchment map, no paper frame. Show a richly varied continuous medieval region: winding broad river from northern mountains to south-eastern coast, rocky northern ridgeline and two traversable mountain passes, scattered gray-green woodland groves, an ancient dark forest patch in the west, central open grasslands, pale sandy shore, small offshore rocky islands, bog and reed patches in the east, a lake, weathered stone remnants as subtle terrain details, gentle stepped cliffs. Cohesive desaturated palette matching references. Leave at least twelve broad, navigable clearings distributed over the land, about 24-40 native pixels wide, for placing separate region icons later. Terrain and foliage are miniaturized at world-map scale, not a close-up walkable level. Richly designed silhouette and varied terrain without filling every clearing with noise. Do NOT paint villages, churches, castles, graveyards or other large destination buildings into this background. No roads, network connections, node circles or route markers baked in: those will be separate dynamic overlays. Fill the full rectangular image edge to edge, no border, opaque background. North-up geography with overhead landscape, objects in matching 2D RPG downward view.",
+    "atlasPrompt": "Use case: stylized-concept. Asset type: actual raster art asset for a medieval 2D pixel roguelite in Godot. The supplied images are STYLE REFERENCES ONLY, do not reproduce their tilesheet arrangement. Match the existing Calciumtrice outdoor/town look shown in reference images: muted dusty olive and sage grass, gray-teal foliage, smoky gray-lavender masonry, cream-gray plaster, dark brown timber, muted ochre and faded brick-red roofs, desaturated slate-blue water. Simple hand-placed square pixel clusters, restrained 3-4 tone ramps per material, crisp hard edges, sparse dithering. Orthographic top-down RPG view with front-facing vertical building walls, about 45-degree downward view, NOT diamond-isometric. Slightly somber medieval countryside, approachable and readable. No glossy rendering, no modern objects, no smooth illustration, no gradients, no antialiasing, no text, no logos or watermark.\nPrimary request: Draw ONE production-ready transparent world-region ICON SPRITE ATLAS. Canvas exactly 1536x1024 pixels. EXACTLY six equal columns and four equal rows, exactly 24 distinct icons, one icon centered in each 256x256 cell. The atlas itself is a single cohesive game asset. Each icon should read like a 64x64 native pixel sprite enlarged 4x nearest-neighbor; visible hard square pixel clusters, not a high-resolution painting disguised as pixel art. Maximum icon footprint about 208x208 display pixels with at least 24px transparent gutter within EVERY cell. All icons use same miniature scale, lighting from upper left, same small ground patch and dark outline weight, front-facing 2D top-down RPG perspective matching references. Fully transparent alpha everywhere outside each icon, no checkerboard pattern painted into image, no panel or cell lines, no labels, no numbering. Do not let any icon bleed into adjacent cells. All silhouettes must be legible at 64px. Ground patches small, irregular, flat grass/dirt chips, NOT floating isometric platforms, no raised square cubes.\nGrid reading order left-to-right, top-to-bottom MUST be:\nRow1: 1 village (three small cream half-timber cottages with ochre/red roofs and well); 2 woodland (three gray-sage leafy trees and stump); 3 cemetery (crooked gray headstones, iron gate, one bare tree); 4 church (gray stone nave, small bell steeple, muted red roof); 5 ruined castle (broken gray-lavender crenellated keep, red banner); 6 swamp (two twisted trees, reeds and shallow slate water).\nRow2: 7 mine (dark timber-braced rocky entrance, pick and cart); 8 watchtower (slender lavender-gray stone tower, red pennant); 9 farm (small cottage, tan crop rows, hay); 10 windmill (timber mill with pale four-bladed sails); 11 harbor (two brown piers, slate-blue water and tiny medieval boat); 12 mountain pass (two craggy gray ridges framing narrow dirt trail).\nRow3: 13 stone bridge (three stone arches across short blue stream); 14 traveler camp (two canvas tents and small orange campfire); 15 merchant caravan (covered wood wagon, crates and rolled cloth); 16 quarry (cut pale stone terraces, block piles and hand crane); 17 lumber camp (log stack, sawhorse and gray-green tree); 18 monastery (compact stone cloister court, cream walls, faded ochre roofs).\nRow4: 19 ancient stone circle (five weathered standing stones, tiny subdued violet center); 20 battlefield (broken cart, abandoned shields, red flag, NO bodies); 21 lakeside (small slate lake, willow, reeds); 22 orchard (three small fruit trees and basket); 23 abandoned village (two broken cottages and leafless tree); 24 final-boss citadel (distinct menacing gray-violet twin towers, dark gate, red banners, very subtle purple accents).\nEvery icon is an actual place miniature, not a symbolic badge. Medieval, weathered, slightly spooky, modest detail consistent with original 16/32px tiles. No characters or text. Keep exact specified order and exactly 24 icons."
+  },
+  "assembled_preview_prompt_file": "preview_generation_prompt.txt",
+  "assembled_preview_note": "The raster preview generation requests failed due to network errors. The delivered assembled preview instead displays existing PNG assets in HTML; no additional generated map image is claimed.",
+  "atlas_layout": {
+    "columns": 6,
+    "rows": 4,
+    "requested_width": 1536,
+    "requested_height": 1024
+  },
+  "region_names": [
+    [
+      "village",
+      "村庄"
+    ],
+    [
+      "forest",
+      "森林"
+    ],
+    [
+      "cemetery",
+      "墓地"
+    ],
+    [
+      "church",
+      "教堂"
+    ],
+    [
+      "ruined_castle",
+      "古堡废墟"
+    ],
+    [
+      "swamp",
+      "沼泽"
+    ],
+    [
+      "mine",
+      "矿洞"
+    ],
+    [
+      "watchtower",
+      "哨塔"
+    ],
+    [
+      "farm",
+      "农庄"
+    ],
+    [
+      "windmill",
+      "风车磨坊"
+    ],
+    [
+      "harbor",
+      "港口"
+    ],
+    [
+      "mountain_pass",
+      "山口"
+    ],
+    [
+      "stone_bridge",
+      "石桥"
+    ],
+    [
+      "traveler_camp",
+      "旅行者营地"
+    ],
+    [
+      "merchant_caravan",
+      "商队"
+    ],
+    [
+      "quarry",
+      "采石场"
+    ],
+    [
+      "lumber_camp",
+      "伐木营地"
+    ],
+    [
+      "monastery",
+      "修道院"
+    ],
+    [
+      "stone_circle",
+      "古石阵"
+    ],
+    [
+      "battlefield",
+      "古战场"
+    ],
+    [
+      "lakeside",
+      "湖畔"
+    ],
+    [
+      "orchard",
+      "果园"
+    ],
+    [
+      "abandoned_village",
+      "废弃村庄"
+    ],
+    [
+      "boss_citadel",
+      "最终 Boss 要塞"
+    ]
+  ]
+}
